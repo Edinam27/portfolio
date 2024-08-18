@@ -1,7 +1,4 @@
-/* author: https://codepen.io/MuzammalAhmed/pen/qBGVZPe
-Muzammal Ahmed */
-
-
+/* Reset and Font Setup */
 * {
     padding: 0;
     margin: 0;
@@ -9,509 +6,426 @@ Muzammal Ahmed */
 }
 
 body {
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background-color: #404040;
+    color: white;
+    overflow: hidden;
+    margin: 0;
 }
 
+/* Basic structure for the container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content styling */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.section-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Projects grid */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card p {
+    color: #666;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #888;
+}
+
+/* Add scroll bar when content overflows */
+html, body {
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Main Layout */
 main {
     display: flex;
     height: 100%;
-    width: 100%;
-    font-family: Poppins;
 }
 
 aside {
-    width: 280px;
+    width: 12%;
+    background: #121212;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-size: 1.1rem;
-    background-color: #212529;
-    backdrop-filter: blur(20px);
-}
-
-.Links {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
-
-aside li {
-    list-style-type: none;
-    display: flex;
-    padding: 20px;
-    gap: 10px;
-    color: white;
+    justify-content: center;
     align-items: center;
-    cursor: pointer;
-    position: relative;
-    transition-duration: 0.2s;
+    
 }
 
-aside li:hover {
+aside ul {
+    list-style-type: none;
+}
+
+.Links li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.Links li i {
+    font-size: 1.5em;
+    margin-right: 10px;
     color: #80ed99;
 }
 
-aside li::after {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    height: 1px;
-    background: linear-gradient(to left, transparent, #ffffff24, transparent);
-    content: '';
-    bottom: 0px;
+.Links li p {
+    font-size: 1em;
 }
 
-aside li i {
-    font-size: 1.3rem;
+.Links li:hover {
+    background: #80ed99;
+    color: black;
 }
-.activeLink{
-    color:#80ed99
-}
-.mySwiper {
 
-    flex: 1;
+.Links li.activeLink {
+    background: #80ed99;
+    color: black;
+}
+
+.swiper {
+    width: 88%;
+}
+
+.SlideContainer {
+    display: flex;
     height: 100%;
 }
 
+/* Home Slide */
 .home-slide {
-    color: white;
     display: flex;
-    background-color: #343a40;
+    flex-direction: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: relative;
 }
 
-.HomeContent {
-    margin: auto 0px;
-    flex: 1;
-    height: auto;
-    
-    padding: 100px;
-    user-select: none;
+.HomeContent h1, .HomeContent h2 {
+    font-size: 3em;
+    line-height: 1.2;
+}
+
+.HomeContent .stylized-name {
+    color: #80ed99;
+}
+
+.HomeContent .proffesions {
+    color: #80ed99;
+}
+
+.HomeContent .heroline {
+    margin-top: 20px;
+    font-size: 1.2em;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.HomeContent .buttonGroup {
+    margin-top: 20px;
+}
+
+.HomeContent button {
+    padding: 10px 20px;
+    background: #80ed99;
+    color: black;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.HomeContent button:hover {
+    background: #010101;
+    color: white;
 }
 
 .SideImg {
-    width: 30%;
-
-
-    margin: auto 10px;
-    margin-right: 100px;
     position: relative;
+    max-width: 400px;
 }
 
 .SideImg img {
     width: 100%;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
-.SideImg .top-right-corner,
-.bottom-left-corner {
+.top-right-corner, .bottom-left-corner {
     position: absolute;
-}
-
-.bottom-left-corner {
-    left: -50px;
-    bottom: -50px;
-    rotate: -90deg;
+    display: flex;
+    flex-direction: column;
 }
 
 .top-right-corner {
-    right: -50px;
-    top: -50px;
-    rotate: 90deg;
+    top: 0;
+    right: 0;
 }
 
-.hr1 {
-    width: 150px;
-    height: 10px;
-    border: none;
-    background: #80ed99;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+.bottom-left-corner {
+    bottom: 0;
+    left: 0;
 }
 
-.hr2 {
-    width: 10px;
-    height: 120px;
-    border-bottom-left-radius: 3px;
-
-    background: #80ed99;
-    border: none;
-    border-bottom-right-radius: 3px;
-}
-
-.HomeContent h1 {
-    font-size: 3em;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.HomeContent h2 {
-    font-size: 2.3em;
-    margin-bottom: 10px;
-    font-weight: 600;
-
-}
-
-.HomeContent h1 .stylized-name {
-    font-weight: 700;
-    color: #80ed99;
-}
-
-.proffesions {
-    color: #85f69f;
-}
-
-.HomeContent .heroline {
-    font-size: 1.5rem;
-    font-weight: 300;
-    padding-right:50px;
-}
-
-.buttonGroup {
-    display: flex;
-    padding: 10px 0px;
-    margin-top: 10px;
-}
-
-.buttonGroup button ,.primary{
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 5px;
-    cursor: pointer;
-    background-color: #1d8637;
-    color: white;
-    border-radius: 5px;
+.top-right-corner hr, .bottom-left-corner hr {
+    width: 50px;
+    border: 2px solid #80ed99;
+    margin: 5px 0;
 }
 
 .slide-help {
     position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-weight: 400;
-    z-index: 100;
-    left: 0%;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1.2rem;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-
-
-.mySwiper {
-    width: 80vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #343a40;
-}
-
-.swiper-slide {
-    width: 100%;
-
-    background-color: #343a40;
-    height: 100%;
-}
-
+/* About Slide */
 .about-us {
-    width:100%;
-    height:100%;
-
-    padding: 100px;
-    color: white;
+    padding: 50px;
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.heading {
-    padding: 20px 10px;
-    font-size: 2.5rem;
+.about-us .heading {
+    font-size: 3em;
     color: #80ed99;
 }
 
-.about-us h3 {
-    padding: 10px;
-
+.about-us .sub-heading {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #80ed99;
 }
 
 .aboutme-deatils {
-    padding: 20px;
-    font-weight: 300;
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 1.1em;
 }
 
 .about-me-divison {
     display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .about-me-table {
-    width: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
+    list-style: none;
+    font-size: 1.1em;
 }
 
 .about-me-table li {
-    padding: 20px;
-    position: relative;
-}
-
-.about-me-table li::after {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    height: 1px;
-    background: linear-gradient(to left, transparent, #ffffff77, transparent);
-    content: '';
-    bottom: 0px;
-}
-
-.about-me-table span {
-    color: #80ed99;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.about-me-table .buttonGroup {
-    grid-column: 1/span 2;
-    justify-content: center;
-    padding: 50px;
-    flex: 1;
+    margin: 10px 0;
 }
 
 .skill-bar {
-    width: calc(40% - 20px);
+    width: 50%;
 }
 
 .skill-bar li {
-    width: 100%;
-    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.skill-bar p {
-    color: #80ed99;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.skill-bar .bar {
-    width: 100%;
-    height: 15px;
-    background-color: #272c30;
-    border-radius: 20px;
-
+.bar {
+    background: #353535;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
 }
 
 .active-bar {
-    background-color: #80ed99;
     height: 100%;
-    width: auto;
-    border-radius: 20px;
+    background: #80ed99;
+    border-radius: 5px;
 }
 
+/* Services Slide */
 .services {
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(3, calc(34% - 10px));
-    grid-template-rows: 100px calc(50% - 50px) calc(50% - 50px);
-    padding: 100px ;
-    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+    gap: 30px;
+    height: 1200px;
 }
 
 .services .heading {
-    grid-column: 1/span 3;
+    font-size: 3em;
+    color: #80ed99;
 }
 
-.services .service {
-    display: flex;
+.service {
+    background: #121212;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    justify-content: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.437);
-    border-radius: 5px;
-    margin: 20px;
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-
-    transition-duration: 0.25s;
+    
 }
 
-.services .service i {
-    font-size: 3rem;
-    color:#80ed99
+.service-icon {
+    font-size: 2em;
+    color: #80ed99;
+    margin-bottom: 10px;
 }
 
-.services .service .service-icon {
-    padding: 0px 50px;
-    border-radius: 5px;
-    margin: 20px auto;
-}
-.service h2{
-    color:#80ed99
-}
-.service:hover {
-    background-color: #80ed99;
-    color: #176d2d
-}
-.service:hover h2,.service:hover i{
-    color: #176d2d
+.service h2 {
+    margin-bottom: 10px;
 }
 
+/* Gallery Slide */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    padding:100px;
-    grid-template-rows: 100px calc(50% - 50px) calc(50% - 50px);
-}
-
-.gallery h1,
-.gallery h2 {
-    grid-column: 1/span 3;
-}
-
-.gallery h2 {
-    color: white;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 20px 10px;
-}
-
-.gallery .project {
-    margin: 25px 20px;
-    margin-top: 0px;
-    background: #212529;
-    padding: 5px;
-    border-radius: 20px;
-}
-
-.gallery .project img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    border:none;
-}
-
-.contactMe {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 80px calc(25% - 20px) calc(25% - 20px) calc(25% - 20px) calc(25% - 20px);
-    position: relative;
-    padding:100px;
-}
-
-.contactMe h1 {
-    grid-column: 1/span 3;
-    font-size:2.5rem;
-    padding:30px;
-}
-
-.contactMe form {
-    grid-area: 2/2/ span 5/span 2;
-}
-
-.contactinfo {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    color: white;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    padding: 50px;
+    
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.contactinfo i {
-    padding: 10px;
-    font-size: 2.5rem;
+.gallery .heading {
+    font-size: 3em;
     color: #80ed99;
+    margin-bottom: 20px;
+}
+
+.project {
+    width: 70%;
+    
+    background: #121212;
+    border-radius: 10px;
+    
+    margin-bottom: 20px;
     margin: 20px auto;
+    
 }
 
-.contactinfo h3 {
+.project img {
+    width: 100%;
+    height: 600vp;
+    object-fit: contain;
+    padding: auto;
+}
+
+/* Contact Slide */
+.contact {
+    padding: 50px;
+}
+
+.contact .heading {
+    font-size: 3em;
+    color: #80ed99;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #80ed99;
+    background: #121212;
+    color: white;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background: #80ed99;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #010101;
+    color: white;
+}
+
+.contact-side-details {
+    width: 45%;
+}
+
+.my-name {
+    font-size: 2em;
     color: #80ed99;
 }
 
-.contactMe form {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 100%;
-    padding: 20px;
-    height: fit-content;
+.details {
+    margin-left: 10px;
+}
+
+.social-links i {
+    font-size: 2em;
+    color: #80ed99;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-links i:hover {
     color: white;
-}
-
-.contactMe form h2 {
-    grid-column: 1/span 2;
-    padding: 20px;
-    display: flex;
-}
-
-.contactMe form input {
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px;
-    font-size: 1.1rem;
-    border: none;
-    color: white;
-    background-color: #212529;
-
-}
-
-.contactMe form input:focus {
-    border: 1px solid #85f69f;
-    outline: none;
-
-}
-
-.contactMe form textarea {
-    width: calc(100% - 40px);
-
-    grid-column: 1/span 2;
-    margin: 20px;
-    padding: 20px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    resize: none;
-    border:none;
-    border: none;
-    color:white;
-    background-color: #212529;
-}
-
-.contactMe form textarea:focus {
-    border: 1px solid #85f69f !important;
-}
-.contactMe button{
-    grid-column: 1/span 2;
-    margin:20px auto ;
-
-}
-footer{
-    position:absolute;
-    bottom:0px;
-    right:0px;
-    text-align: center;
-    color:white;
-    width:100%;
-    font-weight: 200;
-    font-size: 0.8rem;
-}
-footer li{
-    padding:10px;
-}
-form h2 .SocialLinks{
-    padding:5px;
-    width:fit-content;
-    margin-left:auto;
-    margin-right:10px;
-    background-color: #212529;
-    border-radius: 30px;
-}
-form h2 .SocialLinks i{
-    padding:10px;
-    border-radius: 50%;
-    transition-duration: 0.25s;
-}
-form h2 .SocialLinks i:hover{
-    background-color: #176d2d;
-}
-.about-us{
-    overflow: auto;
 }
